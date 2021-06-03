@@ -1,0 +1,76 @@
+caesar:
+  url: https://caesar.xinc818.com
+  tokenId: SvEkaM6DuBLjNMdwoPWB
+  apiToken: ENC(9K9C6+bLiqktLTyTAXQ7TvS2sL9XimzvVnN15pKLK5g=)
+
+oc-server-attributes:
+  groups:
+    -
+      name: global
+      comment: 全局通用配置
+      attributes:
+        -
+          name: global_enable_public_ip_mgmt
+          value: false
+          content: "启用公网ip管理，此配置将作用于:zabbix,jumpserver,keybox"
+        -
+          name: ssh_port
+          value: 22
+          content: "ssh端口"
+        -
+          name: platform
+          value: Linux
+          content: "平台类型"
+    -
+      name: ansible
+      comment: Ansible属性配置项
+      attributes:
+        -
+          name: ansible_subgroup
+          value: 0
+          content: "分组模式, 0按默认算法分组"
+    -
+      name: zabbix
+      comment: Zabbix属性配置项
+      attributes:
+        -
+          name: zabbix_bidirectional_sync
+          value: false
+          content: "双向同步(会清理多余的模版)"
+        -
+          name: zabbix_host_macros
+          value: ''
+          content: 'JSONArray格式:[{"macro": "{$USER_ID}","value": "1"} ]'
+        -
+          name: zabbix_templates
+          value: 'Template OS Linux by Zabbix agent'
+          content: '模版名称（多个用,分割）'
+        -
+          name: zabbix_sysdisk_volume_name
+          value: ''
+          content: '系统盘卷标'
+        -
+          name: zabbix_datadisk_volume_name
+          value: ''
+          content: '数据盘卷标'
+        -
+          name: zabbix_proxy
+          value: ''
+          content: '代理名称'
+    -
+      name: prometheus
+      comment: Prometheus配置项
+      attributes:
+        - name: enable
+          value: false
+          content: "启用Prometheus配置项"
+        -
+          name: job_name
+          value: ''
+          content: "任务名称，留空自动生成"
+        - name: metrics_path
+          value: ''
+          content: "metrics_path，留空自动生成"
+        - name: config_path
+          value: ''
+          content: "配置文件路径，留空自动生成"

@@ -1,0 +1,21 @@
+# 阿里云AK配置
+# uid 企业别名（主账户id）
+# regionIds 数组可以写多个
+
+# 地域和可用区.文档地址  https://help.aliyun.com/document_detail/40654.html?spm=5176.10695662.1996646101.1.7e8f1013WQwRvq
+
+aliyun:
+  accounts:
+    - uid: 1820460406678463
+      master: true
+      name: '主账户'
+      accessKeyId: LTAI4G9LMmkjrHZbhs43aKNh
+      secret: ENC(+b3GIgf1S+HA8PkoSL1XkGBjApnIuwytNBtpGbJR4fShUs8hCmgenQ==)
+      regionId: cn-hangzhou
+      regionIds:
+        - cn-hangzhou
+  #       - cn-shanghai
+  #       - cn-hongkong
+  #       - us-west-1
+  ons:
+    internetRegionId: mq-internet-access

@@ -1,0 +1,78 @@
+logging:
+  level:
+    # swagger 警告日志忽略
+    io.swagger.models.parameters.AbstractSerializableParameter: error
+  file:
+    path: /logs
+
+# 白名单配置
+white:
+  urls: /*.js;/*.css;/*.jpg;/swagger-resources/*;/error;/webjars/*;/swagger-ui/*;v2/*;
+
+opscloud:
+  version: 3.0
+  openTask: true
+  dataPath: /data/opscloud-data
+
+spring:
+  profiles:
+    include:
+      - common
+      - account-prod
+      - zabbix-prod
+      - ldap-prod
+      - jumpserver-prod
+      - aliyun-prod
+      - aws-prod
+      - gitlab-prod
+      - vcsa-prod
+      - cloud
+      - ansible-prod
+      - xterm-prod
+      - tencent-cloud-prod
+      - kubernetes-prod
+      - zookeeper-prod
+      - dingtalk
+      - tencent-exmail
+      - kafka
+      - prometheus-prod
+  redis:
+    host: r-bp1ijbborejdw6dabu.redis.rds.aliyuncs.com
+    port: 6379
+    password: ENC(+zzFh8CDFStHNzjXwnFIYzpxC/fYXmPdR/sCbNf6MYNQI9aS+mbhvw==)
+    jedis:
+      pool:
+        max-wait: 5000
+        max-idle: 20
+        max-active: 100
+        min-idle: 0
+  jackson:
+    time-zone: GMT+8
+
+app:
+  datasource:
+    opscloud:
+      url: jdbc:mysql://rm-bp14453fwr49f19cu90130.mysql.rds.aliyuncs.com:3306/opscloud?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&useInformationSchema=true&tinyInt1isBit=true&nullCatalogMeansCurrent=true&serverTimezone=CTT&allowMultiQueries=true
+      username: opscloud
+      password: ENC(iIV1/um6roLAuWSGQ1XCabwNgmFJw/m/BOXiie0Isw0=)
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      minimum-idle: 3
+      maximum-pool-size: 15
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
+    jumpserver:
+      url: jdbc:mysql://online-dba-metadata.mysql.rds.aliyuncs.com:3331/jumpserver_v231?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+      username: jumpserver
+      password: ENC(LKNGtht2Vm0b5cyVP6+BYHl1RzzOdsJ8wTQFT29Ow0U=)
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      minimum-idle: 3
+      maximum-pool-size: 15
+      max-lifetime: 30000
+      connection-test-query: SELECT 1
+
+
+# java -jar -Djasypt.encryptor.password=${password}
+#jasypt:
+#  encryptor:
+#    password: ${password}
+

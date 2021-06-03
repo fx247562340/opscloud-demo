@@ -1,0 +1,23 @@
+# o - organization（组织-公司）
+# ou - organization unit（组织单元-部门）
+# c - countryName（国家）
+# dc - domainComponent（域名）
+# sn - suer name（真实名称）
+# cn - common name（常用名称
+
+spring:
+  ldap:
+    urls: ldap://ldap.xinc818.com:1389
+    base: dc=xincheng,dc=org
+    username: 'cn=Directory Manager'
+    password: ENC(pHS1OEgUeVwLNioJsPr98nUG2xCGWisePIn8/9pDUnqfVkqwe8OlYi8UHjxTlMbp)
+
+
+ldap:
+  custom:  {userId: cn,
+            userBaseDN: ou=Users,
+            userObjectClass: inetOrgPerson,
+            groupId: cn,
+            groupBaseDN: ou=Groups,
+            groupObjectClass: groupOfUniqueNames,
+            groupMember: uniqueMember}

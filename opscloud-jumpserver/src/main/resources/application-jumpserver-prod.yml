@@ -1,0 +1,9 @@
+# version : API版本目前支持 2.0.1
+# url填写jumpserver站点地址
+jumpserver:
+  version: 2.3.1
+  url: https://jms.xinc818.com
+  coco: oc.xinc818.com
+  admin:
+    username: admin
+    password: ENC(GFxwzA9HMAGUGQIyHtkBpXfXqtWP3RPzD/xdka9p0bU=)
