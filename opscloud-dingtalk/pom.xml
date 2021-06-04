@@ -28,7 +28,7 @@
             <artifactId>taobao-sdk-java</artifactId>
             <version>1.0.1</version>
             <scope>system</scope>
-            <systemPath>/Users/admin/Downloads/dingtalk-sdk-java/taobao-sdk-java-auto_1479188381469-20210528.jar</systemPath>
+            <systemPath>/data/taobao-sdk-java-auto_1479188381469-20210528.jar</systemPath>
         </dependency>
 
         <dependency>
