@@ -36,13 +36,21 @@ public class KafkaClientHelper implements InitializingBean {
     private void initClientMap() {
         List<KafkaConfig.KafkaInstance> instanceList = kafkaConfig.getInstances();
         log.info("instanceList.siz====================" + instanceList.size());
-        instanceList.forEach(instance -> {
+        for (KafkaConfig.KafkaInstance instance : instanceList) {
             instanceMap.put(instance.getInstanceName(), instance);
             if (instance.getInstanceType().equals(1)) {
                 AdminClient adminClient = adminClient(kafkaAdmin(instance.getInstanceId()));
                 adminClientMap.put(instance.getInstanceName(), adminClient);
             }
-        });
+        }
+
+//        instanceList.forEach(instance -> {
+//            instanceMap.put(instance.getInstanceName(), instance);
+//            if (instance.getInstanceType().equals(1)) {
+//                AdminClient adminClient = adminClient(kafkaAdmin(instance.getInstanceId()));
+//                adminClientMap.put(instance.getInstanceName(), adminClient);
+//            }
+//        });
     }
 
     private KafkaAdmin kafkaAdmin(String clusterNodes) {
