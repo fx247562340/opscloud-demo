@@ -2,6 +2,7 @@ package com.baiyi.opscloud.kafka.helper;
 
 import com.baiyi.opscloud.kafka.config.KafkaConfig;
 import com.google.common.collect.Maps;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.springframework.beans.factory.InitializingBean;
@@ -22,6 +23,7 @@ import java.util.Map;
 
 @EnableKafka
 @Component
+@Slf4j
 public class KafkaClientHelper implements InitializingBean {
 
     private static Map<String, AdminClient> adminClientMap = Maps.newHashMap();
@@ -33,6 +35,7 @@ public class KafkaClientHelper implements InitializingBean {
 
     private void initClientMap() {
         List<KafkaConfig.KafkaInstance> instanceList = kafkaConfig.getInstances();
+        log.info("instanceList.siz====================" + instanceList.size());
         instanceList.forEach(instance -> {
             instanceMap.put(instance.getInstanceName(), instance);
             if (instance.getInstanceType().equals(1)) {

@@ -18,7 +18,7 @@ spring:
   profiles:
     include: common,account-open,zabbix-open,ldap-open,jumpserver-open,aliyun-open,aws-open,gitlab-open,vcsa-open,cloud,ansible-open,xterm-open,tencent-cloud-open,kubernetes-open
   redis:
-    host: localhost
+    host: 10.231.145.156
     port: 6379
     password:
     jedis:
@@ -33,9 +33,9 @@ spring:
 app:
   datasource:
     opscloud:
-      url: jdbc:mysql://localhost:3306/opscloud?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&useInformationSchema=true&tinyInt1isBit=true&nullCatalogMeansCurrent=true&serverTimezone=UTC&allowMultiQueries=true
+      url: jdbc:mysql://10.231.145.156:3306/opscloud?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&useInformationSchema=true&tinyInt1isBit=true&nullCatalogMeansCurrent=true&serverTimezone=UTC&allowMultiQueries=true
       username: root
-      password: MyNewPass4!
+      password: 123456
       driver-class-name: com.mysql.jdbc.Driver
       minimum-idle: 3
       maximum-pool-size: 10
