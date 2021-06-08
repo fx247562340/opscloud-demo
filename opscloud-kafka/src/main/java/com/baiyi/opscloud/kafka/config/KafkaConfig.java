@@ -20,7 +20,7 @@ public class KafkaConfig {
     private List<KafkaInstance> instances;
 
     @Data
-    public static class KafkaInstance {
+    public class KafkaInstance {
         private String instanceName;
         private String instanceId;
         private Integer instanceType;

@@ -1,7 +1,6 @@
 package com.baiyi.opscloud;
 
 
-import com.baiyi.opscloud.kafka.config.KafkaConfig;
 import net.javacrumbs.shedlock.spring.annotation.EnableSchedulerLock;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -21,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Version 1.0
  */
 
-@EnableConfigurationProperties({KafkaConfig.class})
+@EnableConfigurationProperties
 @EnableTransactionManagement
 @MapperScan(basePackages = "com.baiyi.opscloud.mapper")
 @SpringBootApplication
