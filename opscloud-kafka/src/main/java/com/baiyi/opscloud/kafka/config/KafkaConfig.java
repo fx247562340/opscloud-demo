@@ -3,6 +3,7 @@ package com.baiyi.opscloud.kafka.config;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "kafka", ignoreInvalidFields = true)
+@PropertySource("classpath:application-kafka.yml")
 public class KafkaConfig {
 
     private List<KafkaInstance> instances;
